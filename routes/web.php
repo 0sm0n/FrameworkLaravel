@@ -66,3 +66,14 @@ Route::get('/power/{id}/profile', function ($id) {
 
 })->name('profile');
 $url = route('profile', ['id' => 1]);
+
+
+
+Route::middleware('validationToken')->group(function (){
+    Route::get('project', function () { return 'Project One';});
+});
+
+Route::get('main', [\App\Http\Controllers\MainController::class, 'test']);
+Route::get('ip', [\App\Http\Controllers\MainController::class, 'index']);
+
+Route::get('user/{id}', [\App\Http\Controllers\MainController::class, 'user'])->whereNumber('id');
