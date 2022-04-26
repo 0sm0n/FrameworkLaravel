@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+# Подключаем файл нашего контроллера через use
+use \App\Http\Controllers\TestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,7 +74,13 @@ Route::middleware('validationToken')->group(function (){
     Route::get('project', function () { return 'Project One';});
 });
 
-Route::get('main', [\App\Http\Controllers\MainController::class, 'test']);
-Route::get('ip', [\App\Http\Controllers\MainController::class, 'index']);
 
-Route::get('user/{id}', [\App\Http\Controllers\MainController::class, 'user'])->whereNumber('id');
+# Создаем маршруты на которые мы будем заходить в дальнейшем
+
+Route::get('my-univer', [TestController::class, 'lessonOne']);
+Route::get('summ', [TestController::class, 'lessonTow']);
+Route::get('Ivan1', [TestController::class, 'Ivan1']);
+Route::get('Ivan2', [TestController::class, 'Ivan2']);
+
+Route::get('/s/{e}/{r}', [TestController::class, 'Signal']);
+Route::get('hack/{cipher}', [TestController::class, 'Hack']);
