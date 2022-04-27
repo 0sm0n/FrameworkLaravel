@@ -86,7 +86,22 @@ Route::get('/s/{e}/{r}', [TestController::class, 'Signal']);
 Route::get('hack/{cipher}', [TestController::class, 'Hack']);
 
 
-Route::get('template/{detach}', [TestController::class, 'lessonTemplateOne']);
-
+/*Route::get('template/{detach}', [TestController::class, 'lessonTemplateOne']);
 
 Route::get('forer', [TestController::class, 'for']);
+*/
+
+Route::get(
+    'template/{detach}',
+    [\App\Http\Controllers\TestController::class,
+        'lessonTemplateOne']
+);
+
+Route::get('politika', [\App\Http\Controllers\TestController::class, 'politikafunc']);
+Route::get('politika-compact', [\App\Http\Controllers\TestController::class, 'politikaminimal']);
+Route::get('book', [\App\Http\Controllers\TestController::class, 'BookStr']);
+Route::get('li', [\App\Http\Controllers\TestController::class, 'liTeg']);
+Route::get('div', [\App\Http\Controllers\TestController::class, 'divTeg']);
+Route::get('span', [\App\Http\Controllers\TestController::class, 'spanTeg']);
+
+

@@ -52,7 +52,7 @@ class TestController extends Controller
 
 
 
-    //2: 3-4
+    /* //2: 3-4
     public function lessonTemplateOne($detach) {
         $detachment = 'Нет отряда';
         switch($detach) {
@@ -69,7 +69,41 @@ class TestController extends Controller
 
         return view('template', compact('detachment', 'item'));
     }
+    */
 
+    public function politikafunc()
+    {
+        return view('politika');
+    }
+
+    public function politikaminimal()
+    {
+        $organization = "CHRT";
+        return view('politika', compact('organization'));
+    }
+    public function BookStr()
+    {
+        $text = '"Ведь экая шалунья ты девчонка."';
+        return view('Book', compact('text'));
+    }
+
+    public function liTeg()
+    {
+        $var_li = ['php', 'html', 'css'];
+        return view('li')->with('var_li', $var_li);
+    }
+
+    public function divTeg()
+    {
+        $var_div = ['Russia', 'ETO', 'KRUTO'];
+        return view('div')->with('var_div', $var_div);
+    }
+
+    public function spanTeg()
+    {
+        $var_span = ['1', '2', '3', '4'];
+        return view('span')->with('var_span', $var_span);
+    }
 
 
 }
