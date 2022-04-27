@@ -84,3 +84,9 @@ Route::get('Ivan2', [TestController::class, 'Ivan2']);
 
 Route::get('/s/{e}/{r}', [TestController::class, 'Signal']);
 Route::get('hack/{cipher}', [TestController::class, 'Hack']);
+
+
+Route::get('template/{detach}', [TestController::class, 'lessonTemplateOne']);
+
+
+Route::get('forer', [TestController::class, 'for']);
